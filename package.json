@@ -1,0 +1,17 @@
+{
+  "name": "shabon_dog",
+  "private": true,
+  "dependencies": {
+    "@rails/actioncable": "^6.0.0",
+    "@rails/activestorage": "^6.0.0",
+    "@rails/ujs": "^6.0.0",
+    "@rails/webpacker": "4.3.0"
+  },
+  "version": "0.1.0",
+  "devDependencies": {
+    "@vue/compiler-sfc": "^3.1.1",
+    "vue": "^3.1.1",
+    "vue-loader": "^16.2.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
