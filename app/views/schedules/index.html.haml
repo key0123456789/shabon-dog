@@ -1,0 +1,10 @@
+%h1 Schedules#index
+
+= form_with model: @schedule do |form|
+  = form.text_field :name
+  = form.submit
+
+%h2 スケジュールボード
+- @schedules.each do |schedule|
+  = link_to schedule_path(schedule.id) do
+    %p #{schedule.name}

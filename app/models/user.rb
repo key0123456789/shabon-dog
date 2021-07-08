@@ -5,4 +5,8 @@ class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[a-zA-Z0-9_\#!$%&`'*+\-{|}~^\/=?\.]+@[a-zA-Z0-9][a-zA-Z0-9\.-]+\z/
   validates :email, presence: true, uniqueness: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }
   validates :name, presence: true
+
+  has_many :schedule_users
+  has_many :schedules, through: :schedule_users
+  accepts_nested_attributes_for :schedule_users
 end
