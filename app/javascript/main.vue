@@ -1,7 +1,7 @@
 <template>
-  <p>
-    {{ message }}
-  </p>
+  <div>
+    <router-view />
+  </div>
 </template>
 
 <script>
