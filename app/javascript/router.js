@@ -1,11 +1,18 @@
 import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
+import Schedules from './pages/Schedules.vue'
 import Schedule from './pages/Schedule.vue'
 
 const routes = [
   {
-    path: '/',
-    component: Schedule
+    path: '/schedules',
+    component: Schedules,
+    name: 'schedules'
+  },
+  {
+    path: '/schedules/:id',
+    component: Schedule,
+    name: 'schedule'
   }
 ]
 
