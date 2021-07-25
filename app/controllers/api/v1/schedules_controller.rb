@@ -31,6 +31,8 @@ class Api::V1::SchedulesController < ApplicationController
     end
   end
 
+  # todo: updateも必要。userのupgrade&downgrade。
+
   def destroy
     schedule = Schedule.find(params[:id])
     schedule_user = schedule.schedule_users

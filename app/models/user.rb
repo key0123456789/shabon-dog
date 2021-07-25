@@ -9,4 +9,6 @@ class User < ApplicationRecord
   has_many :schedule_users
   has_many :schedules, through: :schedule_users
   accepts_nested_attributes_for :schedule_users
+
+  enum membership: { associate: 0, regular: 1, admin: 9 }
 end

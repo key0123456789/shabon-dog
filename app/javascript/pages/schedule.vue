@@ -1,15 +1,19 @@
 <template>
   <div>
     <h2>{{ schedule.name }}</h2>
+    <calendar />
     <button @click="deleteSchedules()">削除</button>
-
   </div>
 </template>
 
 <script>
 import axios from 'axios';
+import Calendar from '../components/organisms/domains/schedule/Calendar.vue';
 
 export default {
+  components: {
+    Calendar
+  },
   data() {
     return {
       schedule: ''
@@ -48,5 +52,4 @@ export default {
     }
   }
 }
-
 </script>
