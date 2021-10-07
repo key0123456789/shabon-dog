@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="!loading">
     <h2>{{ schedule.name }}</h2>
     <calendar />
     <button @click="deleteSchedules()">削除</button>
@@ -16,6 +16,7 @@ export default {
   },
   data() {
     return {
+      loading: false,
       schedule: ''
     }
   },
@@ -29,7 +30,9 @@ export default {
     }
   },
   created() {
+    this.loading = true;
     this.getSchedule();
+    this.loading = false;
   },
   methods: {
     getSchedule() {

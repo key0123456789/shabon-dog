@@ -1,11 +1,11 @@
 <template>
-  <div id="carousel"
+  <div id="carousel" class="carousel"
     @mousedown="onTouchStart" @touchstart="onTouchStart"
     @mousemove="onTouchMove" @touchmove="onTouchMove"
     @mouseup="onTouchEnd" @touchend="onTouchEnd"
     @mouseleave="onTouchEnd" @touchleave="onTouchEnd"
     @transitionend="onTransitionEnd"
-    >
+  >
     <one-day
       v-for="date in dateList"
       :key="date.format('YYYY-MM-DD')"
@@ -23,7 +23,13 @@ export default {
   components: {
     OneDay
   },
-  data: function () {
+  props: {
+    columns: {
+      type: Array,
+      require: true
+    }
+  },
+  data () {
     return {
       startX: null,
       diffX: 0,
@@ -49,7 +55,7 @@ export default {
     },
     columnStyle () {
       return {
-        width: 100 / this.displayDays + '%',
+        width: 100 / (this.displayDays + 1) + '%',
         transform: `
           translate3d(${this.diffX}px, 0, 0)
           translate3d(${this.currentNum * (-100)}%, 0, 0)`
@@ -57,9 +63,9 @@ export default {
     },
     isTransition () {
       if (this.isAnimating) {
-        return {transition: 'all 0.2s ease-out'};
+        return { transition: 'all 0.2s ease-out' };
       } else {
-        return {transition: 'none'};
+        return { transition: 'none' };
       }
     }
   },
@@ -106,18 +112,19 @@ export default {
 }
 </script>
 
-<style scoped>
-#carousel {
+<style>
+.carousel {
   white-space: nowrap;
   overflow: hidden;
   box-sizing: border-box;
   font-size: 0;
 }
-#carousel .column {
+.carousel > .column {
   display: inline-block;
   margin: 0;
   padding: 0;
   font-size: 16px;
   border-right: 1px solid #eee;
+  border-left: 1px solid #eee;
 }
 </style>
