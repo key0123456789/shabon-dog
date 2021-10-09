@@ -6,7 +6,7 @@
         <div class="date__item"></div>
       </div>
     </div>
-    <time-range />
+    <time-range :scale="true" />
   </div>
 </template>
 
