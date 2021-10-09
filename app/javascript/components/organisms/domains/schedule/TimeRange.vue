@@ -1,8 +1,10 @@
 <template>
+  <div class="time-range">
     <div v-for="h in timeRange" :key="h">
       <div class="time" :key="h+'00'"></div>
       <div class="time" :key="h+'30'"></div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -15,7 +17,13 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+.time-range {
+  width: 100%;
+  &__date {
+    height: 56px;
+  }
+}
 .date, .time {
     border-top: 1px solid #f6f6ed;
 }

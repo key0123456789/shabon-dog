@@ -55,7 +55,7 @@ export default {
     },
     columnStyle () {
       return {
-        width: 100 / (this.displayDays + 1) + '%',
+        width: 100 / (this.displayDays) + '%',
         transform: `
           translate3d(${this.diffX}px, 0, 0)
           translate3d(${this.currentNum * (-100)}%, 0, 0)`
@@ -112,19 +112,21 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 .carousel {
+  border: 1px solid #eeeeee;
   white-space: nowrap;
   overflow: hidden;
   box-sizing: border-box;
   font-size: 0;
 }
 .carousel > .column {
+  box-sizing: border-box;
   display: inline-block;
   margin: 0;
   padding: 0;
   font-size: 16px;
-  border-right: 1px solid #eee;
-  border-left: 1px solid #eee;
+  border-right: 1px solid #eeeeee;
+  border-left: 1px solid #eeeeee;
 }
 </style>

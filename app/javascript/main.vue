@@ -2,7 +2,7 @@
   <div>
     <router-view />
     <div>
-      {{ moment(new Date, 'HH') }}
+      {{ moment(new Date, 'HH') }}時
     </div>
   </div>
 </template>

@@ -1,9 +1,10 @@
 <template>
   <div class="column">
     <div class="date" :class="{'sunday': isSunday, 'saturday': isSaturday}">
-      {{date.format('M/D')}}
-      <br>
-      {{date.format('ddd')}}
+      <div class="date__inner">
+        <div class="date__item">{{date.format('M/D')}}</div>
+        <div class="date__item">{{date.format('ddd')}}</div>
+      </div>
     </div>
     <time-range />
   </div>
@@ -17,6 +18,7 @@ moment.locale('ja', {
   weekdays: ["日曜日", "月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日"],
   weekdaysShort: ["日", "月", "火", "水", "木", "金", "土"],
 });
+
 export default {
   components: { TimeRange },
   props: {
@@ -36,7 +38,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .column {
   display: flex;
   flex-direction: row;
@@ -48,17 +50,20 @@ export default {
 .date.saturday {
   background-color: #d8eff8;
 }
-.date, .time {
-    border-top: 1px solid #f6f6ed;
+.time {
+  border-top: 1px solid #f6f6ed;
 }
 .time:last-child {
   border-bottom: 1px solid #f6f6ed;
 }
 .date {
-  height: 3.5rem;
   text-align: center;
-  line-height: 1.5rem;
   font-size: 12px;
-  padding: 0.25rem auto;
+  &__inner {
+    padding: 8px 0;
+  }
+  &__item {
+    height: 20px;
+  }
 }
 </style>

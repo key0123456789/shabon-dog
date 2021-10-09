@@ -1,18 +1,24 @@
 <template>
-  <div>
-<!--    <vertical-axis />-->
+  <div class="calendar">
+    <time-scale />
     <calendar-carousel />
   </div>
 </template>
 
 <script>
-// import VerticalAxis from './VerticalAxis.vue';
 import CalendarCarousel from './CalendarCarousel.vue';
+import TimeScale from "./TimeScale.vue";
 
 export default {
   components: {
-    // VerticalAxis,
+    TimeScale,
     CalendarCarousel
   }
 }
 </script>
+
+<style>
+.calendar {
+  display: flex;
+}
+</style>
